@@ -403,8 +403,8 @@ namespace PalmSens_Jake_experiment_01
             _comm.BeginMeasurement -= _comm_BeginMeasurement;
             _comm.BeginReceiveCurve -= _comm_BeginReceiveCurve;
             _comm.EndMeasurement -= _comm_EndMeasurement;
-            // set current to zero
-            _comm.Current = 0.0f;
+            //// set current to zero
+            //_comm.Current = 0.0f;
             // wait extra time
             System.Threading.Thread.Sleep(1000);
             // end potentiometry method
@@ -478,8 +478,8 @@ namespace PalmSens_Jake_experiment_01
                     {
                         Console.WriteLine("The chronoamperometry measurement is stopped.");
                         System.Threading.Thread.Sleep(100);
-                        // set current to zero
-                        _comm.Potential = 0.0f;
+                        //// set current to zero
+                        //_comm.Potential = 0.0f;
                         // wait extra time
                         System.Threading.Thread.Sleep(1000);
                         // break main while loop
@@ -498,8 +498,8 @@ namespace PalmSens_Jake_experiment_01
             _comm.BeginMeasurement -= _comm_BeginMeasurement;
             _comm.BeginReceiveCurve -= _comm_BeginReceiveCurve;
             _comm.EndMeasurement -= _comm_EndMeasurement;
-            // set potential to zero
-            _comm.Potential = 0.0f;
+            //// set potential to zero
+            //_comm.Potential = 0.0f;
             // wait extra time
             System.Threading.Thread.Sleep(1000);
             // end chronoamperometry method
@@ -646,7 +646,7 @@ namespace PalmSens_Jake_experiment_01
                 level1.Level = dc_currents_array[index_0]; //Sets a current of 1.0 (in the defined CurrentRange) for this level
 
                 level2.Duration = duration_times_array[index_0];
-                level2.Level = (-1.0f)*dc_currents_array[index_0]; //Sets a current of 1.0 (in the defined CurrentRange) for this level
+                level2.Level = (-1.0f) * dc_currents_array[index_0]; //Sets a current of 1.0 (in the defined CurrentRange) for this level
 
                 // additional settings for multistep chronopotentiometry method
                 method_multisteppotentiometry.EquilibrationTime = 1.0f; //Equilabrates the cell at the defined potential for 1 second before starting the measurement
@@ -718,6 +718,7 @@ namespace PalmSens_Jake_experiment_01
                     }
                 }
             }
+
 
             // detroy communication with PalmSens device
             _comm.BeginMeasurement -= _comm_BeginMeasurement;
